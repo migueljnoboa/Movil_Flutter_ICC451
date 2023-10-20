@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +28,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier{
-  var current = WordPair.random();
+  var test = 0;
+  var current = 'start';
+
+
+  void getBool(){
+    test += 1;
+    test % 2 == 0 ? current = 'start' : current = 'end';
+    notifyListeners();
+  }
+
 }
 
 class MyHomePage extends StatefulWidget {
@@ -51,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Imagen 1: '),
+                  Text(appState.current)
                 ],
               ),
             ),
@@ -68,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   ElevatedButton(
                       onPressed:(){
-                        //TODO
+                        appState.getBool();
                       },
                       child: Text('Presione Para Cambiar')
                   )
