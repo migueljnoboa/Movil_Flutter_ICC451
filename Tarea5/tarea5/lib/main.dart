@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Imagen 1: '),
+                  const Text('Imagen 1: '),
                   Text(appState.current)
                 ],
               ),
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Imagen 2: '),
+                  const Text('Imagen 2: '),
                 ],
               ),
             ),
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed:(){
                         appState.getBool();
                       },
-                      child: Text('Presione Para Cambiar')
+                      child: const Text('Presione Para Cambiar')
                   )
                 ],
               ),
